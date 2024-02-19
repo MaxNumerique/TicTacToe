@@ -85,12 +85,24 @@ main {
     font-size: 20px;
 }
 
+.currentPlayer {
+    text-align: center;
+}
+
+#joueurActuel {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+
+
 .gameboard {
     height: 80%;
     width: 40%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
+    /* grid-template-rows: repeat(3, 1fr); */
     grid-template-areas: 
     "un deux trois"
     "quatre cinq six"
@@ -141,38 +153,17 @@ main {
     border-radius:  0 0 20px 0;
 }
 
-.un:hover {
-    background-color: var(--hover-boardbackgroundcolor);
+.caseJeu:hover {
+    background-color: var(--hover-boardbackgroundcolor)
 }
 
-.deux:hover {
-    background-color: var(--hover-boardbackgroundcolor);
-}
-
-.trois:hover {
-    background-color: var(--hover-boardbackgroundcolor);
-}
-
-.quatre:hover {
-    background-color: var(--hover-boardbackgroundcolor);
-}
-
-.cinq:hover {
-    background-color: var(--hover-boardbackgroundcolor);
-}
-
-.six:hover {
-    background-color: var(--hover-boardbackgroundcolor);
-}
-
-.sept:hover {
-    background-color: var(--hover-boardbackgroundcolor);
-}
-
-.huit:hover {
-    background-color: var(--hover-boardbackgroundcolor);
-}
-
-.neuf:hover {
-    background-color: var(--hover-boardbackgroundcolor);
+.caseJeu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
+    min-width: 100px;
+    min-height: 100px;
 }
