@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'calibri', sans-serif;
+}
+
+
+:root {
+    --boardboardbackgroundcolor: rgba(0, 0, 0, 0.904);
+    --main-boardbackgroundcolor: rgba(31, 31, 31, 0.952);
+    --header-boardbackgroundcolor: rgba(0, 0, 0, 0.966);
+    --param-boardbackgroundcolor: rgba(0, 0, 0, 0.952);
+    --hover-boardbackgroundcolor: rgba(109, 109, 109, 0.952);
+}
+
+h1, h2, p {
+    color: rgb(206, 206, 206);
+}
+
+header {
+    background-color: var(--header-boardbackgroundcolor);
+    color: white;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: black 2px;
+}
+
+.left-side {
+    width: 50%;
+    display: flex;
+    justify-content: center
+}
+
+.right-side {
+    width: 50%;
+    display: flex;
+    justify-content: right;
+    margin-right: 50px;
+}
+
+main {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-boardbackgroundcolor)
+}
+
+.param {
+    height: 80%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    /* justify-content: center; */
+    margin: 20px;
+    background-color: var(--param-boardbackgroundcolor);
+    border-radius: 20px;
+    gap: 50px;
+}
+
+.param h1, .param .reset {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 30px;
+}
+
+.param h2, .param p, .param button {
+    display: flex;
+    justify-content: left;
+    margin-left: 30px;
+    font-size: 17px;
+}
+
+.param button {
+    width: 120px;   
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.gameboard {
+    height: 80%;
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "un deux trois"
+    "quatre cinq six"
+    "sept huit neuf";
+    background-color: var(--main-boardbackgroundcolor);
+    border-radius: 20px;
+    gap: 0.5rem;
+    margin: 12px 12px 12px 100px;
+}
+.un {
+    grid-area: un;
+    background-color: var(--boardboardbackgroundcolor);
+    border-radius: 20px 0 0 0;
+}
+.deux {
+    grid-area: deux;
+    background-color: var(--boardboardbackgroundcolor);
+}
+.trois {
+    grid-area: trois;
+    background-color: var(--boardboardbackgroundcolor);
+    border-radius: 0 20px 0 0;
+}
+.quatre {
+    grid-area: quatre;
+    background-color: var(--boardboardbackgroundcolor);
+}
+.cinq {
+    grid-area: cinq;
+    background-color: var(--boardboardbackgroundcolor);
+}
+.six{
+    grid-area: six;
+    background-color: var(--boardboardbackgroundcolor);
+}
+.sept {
+    grid-area: sept;
+    background-color: var(--boardboardbackgroundcolor);
+    border-radius: 0 0 0 20px;
+}
+.huit {
+    grid-area: huit;
+    background-color: var(--boardboardbackgroundcolor);
+}
+.neuf {
+    grid-area: neuf;
+    background-color: var(--boardboardbackgroundcolor);
+    border-radius:  0 0 20px 0;
+}
+
+.un:hover {
+    background-color: var(--hover-boardbackgroundcolor);
+}
+
+.deux:hover {
+    background-color: var(--hover-boardbackgroundcolor);
+}
+
+.trois:hover {
+    background-color: var(--hover-boardbackgroundcolor);
+}
+
+.quatre:hover {
+    background-color: var(--hover-boardbackgroundcolor);
+}
+
+.cinq:hover {
+    background-color: var(--hover-boardbackgroundcolor);
+}
+
+.six:hover {
+    background-color: var(--hover-boardbackgroundcolor);
+}
+
+.sept:hover {
+    background-color: var(--hover-boardbackgroundcolor);
+}
+
+.huit:hover {
+    background-color: var(--hover-boardbackgroundcolor);
+}
+
+.neuf:hover {
+    background-color: var(--hover-boardbackgroundcolor);
+}

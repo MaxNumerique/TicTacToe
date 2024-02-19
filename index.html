@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="left-side"></div>
+      <div class="right-side">
+        <h2>TIC TAC TOE</h2>
+      </div>
+    </header>
+
+    <main>
+      <div class="param">
+        <div class="title"><h1>Tic Tac Toe</h1></div>
+        <div class="currentPlayer">
+          <h2>Au tour de :</h2>
+          <p>Joueur 1 / Joueur2 / Ordinateur</p>
+        </div>
+        <div class="historique1">
+          <h2>Historique des coups du Joueur 1 :</h2>
+          <p>Coup 1 / Coup 2 / Coup 3</p>
+          <img src="" alt="" />
+        </div>
+        <div class="historique2">
+          <h2>Historique des coups du Joueur 2 :</h2>
+          <p></p>
+          <img src="" alt="" />
+        </div>
+        <div class="result">
+          <h2>Gagnant :</h2>
+          <p>Joueur 1 / Joueur 2 / Ordinateur</p>
+        </div>
+        <div class="reset">
+          <button
+            class="button-18"
+            role="button"
+            onclick="window.location.reload()"
+          >
+            REJOUER
+          </button>
+        </div>
+      </div>
+      <div class="gameboard" id="TerrainDeJeu">
+        <div class="case un"></div>
+        <div class="case deux"></div>
+        <div class="case trois"></div>
+        <div class="case quatre"></div>
+        <div class="case cinq"></div>
+        <div class="case six"></div>
+        <div class="case sept"></div>
+        <div class="case huit"></div>
+        <div class="case neuf"></div>
+      </div>
+      <!-- <div class=""></div> -->
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
