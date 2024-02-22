@@ -27,25 +27,26 @@
           <h2>Au tour de :</h2>
           <span id="joueurActuel">Joueur 1</span>
         </div>
-        <div class="historique1">
-          <h2>Historique des coups du Joueur 1 :</h2>
-          <p>Coup 1 / Coup 2 / Coup 3</p>
-          <img src="" alt="" />
-        </div>
-        <div class="historique2">
-          <h2>Historique des coups du Joueur 2 :</h2>
-          <p></p>
-          <img src="" alt="" />
-        </div>
-        <div class="result">
-          <h2>Gagnant :</h2>
-          <p>Joueur 1 / Joueur 2 / Ordinateur</p>
+        <div class="choisir_mode">
+          <h2>Choisir le mode :</h2>
+          <div class="mode_container">
+            <button class="joueurContreJoueur" role="button">
+              Contre Joueur
+            </button>
+            <button class="joueurContreOrdinateur" role="button">
+              Contre Ordinateur
+            </button>
+            <button class="joueurContreImmpossible" role="button">
+              Contre Ordinateur Impossible
+            </button>
+          </div>
         </div>
         <div class="reset">
           <button
             class="button-18"
             role="button"
-            onclick="window.location.reload()">
+            onclick="window.location.reload()"
+          >
             REJOUER
           </button>
         </div>
