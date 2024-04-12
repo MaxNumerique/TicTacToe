@@ -1,69 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <div class="left-side"></div>
-      <div class="right-side">
-        <h2>TIC TAC TOE</h2>
-      </div>
-    </header>
 
-    <main>
-      <div class="param">
-        <div class="title"><h1>Tic Tac Toe</h1></div>
-        <div class="currentPlayer">
-          <h2>Au tour de :</h2>
-          <span id="joueurActuel">Joueur 1</span>
-        </div>
-        <div class="choisir_mode">
-          <h2>Choisir le mode :</h2>
-          <div class="mode_container">
-            <button class="joueurContreJoueur" role="button">
-              Contre Joueur
-            </button>
-            <button class="joueurContreOrdinateur" role="button">
-              Contre Ordinateur
-            </button>
-            <button class="joueurContreImmpossible" role="button">
-              Contre Ordinateur Impossible
-            </button>
-          </div>
-        </div>
-        <div class="reset">
-          <button
-            class="button-18"
-            role="button"
-            onclick="window.location.reload()"
-          >
-            REJOUER
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <div class="left-side"></div>
+    <div class="right-side">
+      <h2>TIC TAC TOE</h2>
+    </div>
+  </header>
+
+  <main>
+    <div class="param">
+      <div class="title">
+        <h1>Tic Tac Toe</h1>
+      </div>
+      <div class="currentPlayer">
+        <h2>Au tour de :</h2>
+        <span id="joueurActuel">Joueur 1</span>
+      </div>
+      <div class="choisir_mode">
+        <h2>Choisir le mode :</h2>
+        <div class="mode_container">
+          <button onclick="joueurContreJoueur()" class="joueurContreJoueur" role="button">
+            Contre Joueur
+          </button>
+          <button onclick="joueurContreOrdi('joueur_ordi')" class="joueurContreOrdinateur" role="button">
+            Contre Ordinateur
+          </button>
+          <button onclick="changeGameMode('joueur_ordi_impossible')" class="joueurContreImmpossible" role="button">
+            Contre Ordinateur Impossible
           </button>
         </div>
       </div>
-      <div class="gameboard" id="TerrainDeJeu">
-        <div class="caseJeu un"></div>
-        <div class="caseJeu deux"></div>
-        <div class="caseJeu trois"></div>
-        <div class="caseJeu quatre"></div>
-        <div class="caseJeu cinq"></div>
-        <div class="caseJeu six"></div>
-        <div class="caseJeu sept"></div>
-        <div class="caseJeu huit"></div>
-        <div class="caseJeu neuf"></div>
+      <div class="reset">
+        <button class="button-18" role="button" onclick="window.location.reload()">
+          REJOUER
+        </button>
       </div>
-      <!-- <div class=""></div> -->
-    </main>
-    <script src="script.js"></script>
-  </body>
+    </div>
+    <div class="gameboard" id="TerrainDeJeu">
+      <div class="caseJeu un"></div>
+      <div class="caseJeu deux"></div>
+      <div class="caseJeu trois"></div>
+      <div class="caseJeu quatre"></div>
+      <div class="caseJeu cinq"></div>
+      <div class="caseJeu six"></div>
+      <div class="caseJeu sept"></div>
+      <div class="caseJeu huit"></div>
+      <div class="caseJeu neuf"></div>
+    </div>
+    <!-- <div class=""></div> -->
+  </main>
+  <script src="script.js"></script>
+</body>
+
 </html>

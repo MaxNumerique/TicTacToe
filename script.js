@@ -6,13 +6,9 @@ const caseDeJeu = document.querySelectorAll(".caseJeu");
 let Joueur = "Joueur1";
 let tour = 1;
 
-caseDeJeu.forEach((caseJeu) => {
-  caseJeu.addEventListener("click", function () {
-    remplirCase(this);
-  });
-});
 
-function remplirCase(caseJeu) {
+
+function JoueurvsJoueur(caseJeu) {
   if (caseJeu.textContent == "") {
     changerJoueur();
     afficherJoueurActuel();
@@ -21,7 +17,7 @@ function remplirCase(caseJeu) {
     checkColonne();
     checkDiagonale();
     tour++;
-    checkResult();
+    checkEgalite();
   }
 }
 
@@ -51,7 +47,7 @@ function changerCouleur(caseJeu) {
   }
 }
 
-function checkResult() {
+function checkEgalite() {
   if (tour == 10) {
     alert("Chehh ! Personne n'a gagné !");
   }
@@ -73,12 +69,11 @@ const colonnes = [colonne1, colonne2, colonne3];
 const diagonales = [diagonale1, diagonale2];
 
 function checkLigne() {
-    
   for (let i = 0; i < lignes.length; i++) {
     if (lignes[i][0].textContent == "X" && lignes[i][1].textContent == "X" && lignes[i][2].textContent == "X") {
         alert('Joueur 2 gagne');
     } else if (lignes[i][0].textContent == "O" && lignes[i][1].textContent == "O" && lignes[i][2].textContent == "O") {
-        alert('Joueur 2 gagne');
+        alert('Joueur 1 gagne');
     }
   }
 }
@@ -88,7 +83,7 @@ function checkColonne() {
         if (colonnes[i][0].textContent == "X" && colonnes[i][1].textContent == "X" && colonnes[i][2].textContent == "X") {
             alert('Joueur 2 gagne');
         } else if (colonnes[i][0].textContent == "O" && colonnes[i][1].textContent == "O" && colonnes[i][2].textContent == "O") {
-            alert('Joueur 2 gagne');
+            alert('Joueur 1 gagne');
         }
       }
 }
@@ -98,52 +93,91 @@ function checkDiagonale() {
         if (diagonales[i][0].textContent == "X" && diagonales[i][1].textContent == "X" && diagonales[i][2].textContent == "X") {
             alert('Joueur 2 gagne');
         } else if (diagonales[i][0].textContent == "O" && diagonales[i][1].textContent == "O" && diagonales[i][2].textContent == "O") {
-            alert('Joueur 2 gagne');
+            alert('Joueur 1 gagne');
         }
       }
 }
 
-const joueurContreJoueur = document.querySelector('.joueurContreJoueur');
-const joueurContreOrdi = document.querySelector('.joueurContreOrdinateur');
-const joueurContreImpossible = document.querySelector('.joueurContreImmpossible');
-// const modeDeJeu = [joueurContreJoueur, joueurContreOrdi, joueurContreImpossible];
-// let modeActuel = modeDeJeu[0];
-
-// function changerGameMode() {
-//     for (let i = 0; i < modeDeJeu.length; i++) {
-//         if (modeDeJeu[i].click) {
-//             location.reload();
-//             modeActuel = modeDeJeu[i];
-//         }
-//     }
-//     console.log(modeDeJeu);
-// }
-
-joueurContreJoueur.addEventListener("click", function(){
-    location.reload();
-    let modeActuel = modeDeJeu[0];
-});
-
-joueurContreOrdi.addEventListener('click', function () {
-    location.reload();
-    modeActuel = modeDeJeu[1];
-
-});
-
-joueurContreImpossible.addEventListener('click', function () {
-    location.reload();
-    modeActuel = modeDeJeu[2];
-});
 
 
-function ordiPlays() {
-    const caseVide = [];
-    for (let i = 0; i < caseDeJeu.length; i++) {
-        if (caseDeJeu == "O") {
-            
-        }
-    }
-    const index = Math.floor(Math.random() * caseVide.length);
-    caseDeJeu[caseVide[index]].click();
+
+// const joueurContreJoueur = document.querySelector('.joueurContreJoueur');
+// const joueurContreOrdi = document.querySelector('.joueurContreOrdinateur');
+// const joueurContreImpossible = document.querySelector('.joueurContreImmpossible');
+
+let modeJeuActuel = joueurContreJoueur;
+
+function GameMode() {
+  if (modeJeuActuel == joueurContreJoueur) {
+    joueurContreJoueur();
+  } else if (modeJeuActuel == joueurContreOrdi) {
+    joueurContreOrdi();
+  }
 }
 
+
+
+function joueurContreJoueur() {
+  caseDeJeu.forEach((caseJeu) => {
+    caseJeu.addEventListener("click", function () {
+      JoueurvsJoueur(this);
+    });
+  });
+}
+
+function joueurContreOrdi() {
+  caseDeJeu.forEach((caseJeu) => {
+    caseJeu.addEventListener('click', function() {
+      JoueurvsOrdi(this);
+    });
+  });
+}
+
+function JoueurvsOrdi(caseJeu) {
+  if (caseJeu.textContent == "") {
+    // afficherJoueurActuel();
+    // changerCouleur(caseJeu);
+    OrdiPlays();
+    changerCouleur2(caseJeu);
+    checkLigne();
+    checkColonne();
+    checkDiagonale();
+    tour++;
+    checkEgalite();
+  }
+}
+
+
+// function changerJoueur() {
+//   if (Joueur == "Joueur1") {
+//     Joueur = "Joueur2";
+//   } else {
+//     Joueur = "Joueur1";
+//   }
+// }
+
+function OrdiPlays() {
+  // changerJoueur();
+  let random = Math.floor(Math.random() * caseDeJeu.length);
+  if (caseDeJeu[random].textContent == "X" || caseDeJeu[random].textContent == "O") {
+    OrdiPlays();
+  } else {
+    changerCouleur2(caseDeJeu[random]); 
+    caseDeJeu[random].textContent = "O";
+    
+  }
+  
+  // changerCouleur2(caseDeJeu[random]); 
+  // caseDeJeu[random].textContent = "O";
+
+}
+
+function changerCouleur2(caseJeu) {
+  if (Joueur == "Joueur1") {
+    caseJeu.style.backgroundColor = "purple"; 
+    caseJeu.textContent = "X";
+  } else {
+    caseJeu.style.backgroundColor = "grey"; 
+    caseJeu.textContent = "O";
+  }
+}
